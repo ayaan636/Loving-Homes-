@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Loving Homes</title>
+<style>
+/* Reset & body */
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background-color: #1a1a1a;
+    color: #f5d76e;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #111;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    z-index: 100;
+}
+
+header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f5d76e;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #f5d76e, 0 0 10px #f5d76e; }
+    50% { text-shadow: 0 0 20px #f5d76e, 0 0 30px #f5d76e; }
+    100% { text-shadow: 0 0 5px #f5d76e, 0 0 10px #f5d76e; }
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f5d76e;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px #f5d76e;
+}
+
+/* Main Content */
+main {
+    margin-top: 100px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f5d76e;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.section {
+    background: rgba(26,26,26,0.9);
+    margin: 20px 0;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(245,215,110,0.6);
+}
+
+.section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.section p, .section ul {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    text-align: center;
+}
+
+ul {
+    list-style: circle inside;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    color: #f5d76e;
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.5);
+    margin-top: 50px;
+}
+
+/* Responsive */
+@media(max-width:900px){
+    nav ul { flex-wrap: wrap; gap: 15px; justify-content: center; }
+    h1 { font-size: 2.5rem; }
+    .section h3 { font-size: 1.5rem; }
+}
+
+@media(max-width:600px){
+    nav ul { flex-direction: column; gap: 10px; }
+    h1 { font-size: 2.2rem; }
+    .section h3 { font-size: 1.3rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">
+        <img src="https://img.icons8.com/emoji/48/dog-emoji.png" alt="Dog Icon">
+        Loving Homes
+    </div>
+    <nav>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about us.html">About Us</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="FAQ.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+    <h1>About Us</h1>
+
+    <div class="section">
+        <h3>Who We Are</h3>
+        <p>Loving Homes is a dedicated pet care and adoption service located in Hong Kong. Our mission is to rescue, care for, and provide loving homes for pets in need. Every animal deserves a safe, healthy, and happy environment — and we make that possible.</p>
+    </div>
+
+    <div class="section">
+        <h3>Our Goals</h3>
+        <ul>
+            <li>Provide a safe home for abandoned animals</li>
+            <li>Offer professional care, playtime, and training</li>
+            <li>Match pets with responsible, loving families</li>
+            <li>Promote animal welfare in the community</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>Why Choose Us?</h3>
+        <p>We go the extra mile. From professional facilities to caring staff, we ensure your furry friends enjoy comfort, fun, and love every day. Adoption or boarding — we treat pets like family.</p>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Loving Homes. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

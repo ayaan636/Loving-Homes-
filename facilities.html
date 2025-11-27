@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facilities - Loving Homes</title>
+<style>
+body {margin:0; font-family:'Georgia', serif; background:#1a1a1a; color:#f5d76e; text-align:center;}
+header {width:100%; background:#111; padding:15px 0; position:fixed; top:0; z-index:100; box-shadow:0 2px 6px rgba(0,0,0,0.5);}
+nav {display:flex; justify-content:center; gap:50px; flex-wrap:wrap;}
+.logo {font-size:2rem; font-weight:bold; color:#f5d76e; animation:glow 2s ease-in-out infinite alternate;}
+@keyframes glow {0% {text-shadow:0 0 5px #f5d76e,0 0 10px #f5d76e;}50% {text-shadow:0 0 20px #f5d76e,0 0 30px #f5d76e;}100% {text-shadow:0 0 5px #f5d76e,0 0 10px #f5d76e;}}
+.nav-links {list-style:none; display:flex; gap:30px; margin:0; padding:0;}
+.nav-links li a {text-decoration:none; color:#f5d76e; font-weight:bold; transition:0.3s;}
+.nav-links li a:hover {color:#fff; text-shadow:0 0 8px #f5d76e;}
+main {margin-top:120px; max-width:1000px; margin-left:auto; margin-right:auto; padding:0 20px;}
+h1 {font-size:2.5rem; margin-bottom:15px; text-shadow:1px 1px 5px #000;}
+.section {background:rgba(26,26,26,0.85); padding:20px; border-radius:15px; margin-bottom:30px; box-shadow:0 4px 15px rgba(0,0,0,0.5); opacity:0; transform:translateY(20px); animation:fadeIn 1s forwards;}
+.section h2 {font-size:2rem; margin-bottom:10px; border-bottom:2px solid #f5d76e; display:inline-block; padding-bottom:5px; text-shadow:0 0 5px #f5d76e;}
+.section p, .section ul {font-size:1.1rem; text-align:left;}
+.section ul {list-style:disc inside;}
+.gallery {display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:20px;}
+.gallery img {width:100%; border-radius:15px; box-shadow:0 4px 15px rgba(0,0,0,0.5); transition:transform 0.3s, box-shadow 0.3s;}
+.gallery img:hover {transform:scale(1.05); box-shadow:0 0 15px #f5d76e,0 0 25px #f5d76e;}
+footer {text-align:center; padding:20px; background:#111; color:#f5d76e; box-shadow:0 -4px 8px rgba(0,0,0,0.5); margin-top:50px;}
+@keyframes fadeIn {to {opacity:1; transform:translateY(0);}}
+@media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.gallery{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <div class="logo">Loving Homes</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about us.html">About Us</a></li>
+      <li><a href="facilities.html">Facilities</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="FAQ.html">FAQ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<h1>Our Facilities</h1>
+
+<section class="section" style="animation-delay:0.1s;">
+<h2>Luxury Suites</h2>
+<p>Climate-controlled rooms, underfloor heating, relaxing TVs for dogs.</p>
+</section>
+
+<section class="section" style="animation-delay:0.3s;">
+<h2>Health & Wellness</h2>
+<ul>
+<li>24/7 Veterinary care</li>
+<li>Professional Grooming & Spa</li>
+</ul>
+</section>
+
+<section class="section" style="animation-delay:0.5s;">
+<h2>Fun & Activities</h2>
+<ul>
+<li>Indoor Play Barn & Agility Tracks</li>
+<li>Secure Outdoor Paddocks & Woodland Walks</li>
+<li>Supervised Pet Watch</li>
+</ul>
+</section>
+
+<section class="gallery">
+<img src="https://kingsvet.com.au/wp-content/uploads/2024/10/why-is-pet-grooming-important.jpg" alt="Grooming Spa">
+<img src="https://conventionsouth.com/wp-content/uploads/2024/07/Pet-Retreat-Package-JW-Marriott-San-Antonio8.jpg" alt="Luxury Suites">
+<img src="https://s19499.pcdn.co/wp-content/uploads/2021/08/dog-pool-party-upper-county-recreation-Julia-Nikhinson6-e1629747599259.jpg" alt="Play Area">
+</section>
+</main>
+
+<footer>
+<p>&copy; 2025 Loving Homes. All rights reserved.</p>
+</footer>
+
+<script>
+// Animate sections on page load
+document.querySelectorAll('.section').forEach((sec, i) => {
+  sec.style.animationDelay = (i*0.2)+'s';
+  sec.style.opacity = 1;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Loving Homes</title>
+<style>
+body {
+    margin:0;
+    font-family:'Georgia', serif;
+    background:#1a1a1a;
+    color:#f5d76e;
+    text-align:center;
+}
+
+/* Header */
+header {
+    width:100%;
+    background:#111;
+    padding:15px 0;
+    position:fixed;
+    top:0;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,0.5);
+}
+nav {
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+.logo {
+    font-size:2rem;
+    font-weight:bold;
+    color:#f5d76e;
+}
+.nav-links {
+    list-style:none;
+    display:flex;
+    gap:30px;
+    margin:0;
+    padding:0;
+}
+.nav-links li a {
+    text-decoration:none;
+    color:#f5d76e;
+    font-weight:bold;
+    transition:0.3s;
+}
+.nav-links li a:hover {
+    color:#fff;
+    text-shadow:0 0 8px #f5d76e;
+}
+
+/* Main content */
+main {
+    margin-top:120px;
+    max-width:650px;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0 20px;
+    text-align:left;
+}
+
+h1 {
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:15px;
+}
+
+/* Form styles */
+form {
+    background:rgba(26,26,26,0.95);
+    padding:25px;
+    border-radius:15px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    box-shadow:0 0 10px rgba(245,215,110,0.3);
+}
+
+input, textarea, select {
+    padding:12px;
+    border-radius:8px;
+    border:none;
+    font-size:1rem;
+    background:#222;
+    color:#f5d76e;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline:2px solid #f5d76e;
+}
+
+input[type="submit"] {
+    background:#f5d76e;
+    color:#111;
+    font-weight:bold;
+    cursor:pointer;
+    border:none;
+    transition:0.4s;
+    text-transform:uppercase;
+    box-shadow:0 0 10px #f5d76e;
+}
+
+input[type="submit"]:hover {
+    background:#fff;
+    box-shadow:0 0 18px #f5d76e;
+}
+
+#successMessage {
+    display:none;
+    margin-top:20px;
+    font-size:1.2rem;
+    font-weight:bold;
+    color:#90ee90;
+    text-align:center;
+}
+
+/* Responsive */
+@media(max-width:600px){
+    nav {flex-direction:column; gap:15px;}
+    form {padding:20px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Loving Homes</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about us.html">About Us</a></li>
+      <li><a href="facilities.html">Facilities</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="FAQ.html">FAQ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<h1>📩 Contact Us</h1>
+<p style="text-align:center; font-size:1.1rem;">We’d love to hear from you! Send us a message below.</p>
+
+<form id="contactForm">
+    <input type="text" id="name" placeholder="Your Full Name" required>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <input type="text" id="emailUser" placeholder="Email Username" required style="flex:2; min-width:150px;">
+        <select id="emailDomain" style="flex:1; min-width:120px;" required>
+            <option value="@gmail.com">@gmail.com</option>
+            <option value="@hotmail.com">@hotmail.com</option>
+            <option value="@yahoo.com">@yahoo.com</option>
+            <option value="@outlook.com">@outlook.com</option>
+        </select>
+    </div>
+
+    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+
+    <input type="submit" value="Send Message">
+</form>
+
+<div id="successMessage">✔ Your message has been sent! We will contact you soon.</div>
+</main>
+
+<footer>
+<p>&copy; 2025 Loving Homes. All rights reserved.</p>
+</footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault(); // prevent page reload
+
+    const name = document.getElementById("name").value.trim();
+    const emailUser = document.getElementById("emailUser").value.trim();
+    const emailDomain = document.getElementById("emailDomain").value;
+    const message = document.getElementById("message").value.trim();
+
+    if(name && emailUser && message){
+        const email = emailUser + emailDomain;
+        const subject = encodeURIComponent("Message from Loving Homes Contact Form");
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage:\n${message}`);
+
+        // Open user's email client
+        window.location.href = `mailto:ayaanirfan181@gmail.com?subject=${subject}&body=${body}`;
+
+        // Show success message
+        const success = document.getElementById("successMessage");
+        success.style.display = "block";
+
+        // Reset form
+        this.reset();
+    }
+});
+</script>
+
+</body>
+</html>

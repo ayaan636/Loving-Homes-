@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Packages - Loving Homes</title>
+<style>
+body {
+    margin:0; font-family:'Georgia', serif; background:#1a1a1a; color:#f5d76e; text-align:center;
+}
+
+/* Header */
+header {
+    width:100%; background:#111; padding:15px 0; position:fixed; top:0; z-index:100; 
+    box-shadow:0 2px 6px rgba(0,0,0,0.5);
+}
+nav {display:flex; justify-content:center; gap:50px; flex-wrap:wrap;}
+.logo {font-size:2rem; font-weight:bold; color:#f5d76e; text-shadow:0 0 10px #f5d76e;}
+.nav-links {list-style:none; display:flex; gap:30px; margin:0; padding:0;}
+.nav-links li a {text-decoration:none; color:#f5d76e; font-weight:bold; transition:0.3s;}
+.nav-links li a:hover {color:#fff; text-shadow:0 0 12px #f5d76e;}
+main {margin-top:100px; max-width:1000px; margin-left:auto; margin-right:auto; padding:0 20px;}
+h1 {font-size:2.5rem; margin-bottom:15px; text-shadow:0 0 12px #f5d76e;}
+
+/* Package Cards */
+.package-cards {
+    display:flex; flex-wrap:wrap; gap:30px; justify-content:center; margin-top:30px;
+}
+.card {
+    background:#222; border-radius:15px; box-shadow:0 4px 15px rgba(0,0,0,0.5); 
+    padding:25px; width:280px; transition:0.4s; opacity:0; transform:translateY(20px);
+}
+.card:hover {transform:translateY(-10px); box-shadow:0 0 20px #f5d76e;}
+.card h3 {font-size:1.8rem; margin-bottom:10px; border-bottom:2px solid #f5d76e; display:inline-block; padding-bottom:5px;}
+.card ul {list-style:disc inside; text-align:left; margin-top:10px;}
+.price-tag {font-size:1.3rem; font-weight:bold; margin-top:10px; color:#fff; text-shadow:0 0 5px #f5d76e;}
+
+/* Calculator Box */
+.calc-box {
+    margin-top:40px; background:#111; padding:25px; border-radius:15px; width:100%; max-width:500px; 
+    margin-left:auto; margin-right:auto; box-shadow:0 0 12px #f5d76e;
+}
+select, input[type="number"] {width:100%; padding:10px; margin-top:10px; border-radius:8px; border:2px solid #f5d76e; background:#222; color:#f5d76e; text-align:center;}
+.calc-button {
+    margin-top:20px; background:#f5d76e; color:#111; padding:12px 25px; border-radius:10px; cursor:pointer; 
+    transition:0.3s; border:none; font-weight:bold;
+}
+.calc-button:hover {box-shadow:0 0 20px #f5d76e; transform:translateY(-3px);}
+.total-output {
+    margin-top:20px; color:#fff; font-size:1.2rem; font-weight:bold; text-shadow:0 0 10px #f5d76e;
+}
+
+/* Footer */
+footer {text-align:center; padding:20px; background:#111; color:#f5d76e; margin-top:50px; box-shadow:0 -4px 8px rgba(0,0,0,0.5);}
+
+/* Responsive */
+@media(max-width:900px){.package-cards{flex-direction:column; gap:20px;}}
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+<div class="logo">Loving Homes</div>
+<ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about us.html">About Us</a></li>
+      <li><a href="facilities.html">Facilities</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="FAQ.html">FAQ</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<h1>Our Packages</h1>
+<p>Select your package and customize your dog’s stay!</p>
+
+<div class="package-cards">
+<div class="card">
+<h3>Premium Package</h3>
+<div class="price-tag">$80 / Night</div>
+<ul>
+<li>Four walks per day</li>
+<li>Private grass area</li>
+<li>Daily photo updates</li>
+<li>Personalized treats</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Classic Package</h3>
+<div class="price-tag">$60 / Night</div>
+<ul>
+<li>Three walks per day</li>
+<li>Indoor play barn</li>
+<li>Relaxation zone</li>
+<li>Bath included</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Day Package</h3>
+<div class="price-tag">$30 / Day</div>
+<ul>
+<li>Two walks</li>
+<li>Outdoor playtime</li>
+<li>Agility track</li>
+<li>Sand pit fun</li>
+</ul>
+</div>
+</div>
+
+<div class="calc-box">
+<h2>Calculate Your Total</h2>
+<label>Select Package:</label>
+<select id="package">
+<option value="80">Premium - $80/night</option>
+<option value="60">Classic - $60/night</option>
+<option value="30">Day - $30/day</option>
+</select>
+
+<label>Number of Days:</label>
+<input type="number" id="days" value="1" min="1">
+
+<label>Additional Services:</label><br>
+<input type="checkbox" id="grooming" value="20"> Extra Grooming (+$20)<br>
+<input type="checkbox" id="training" value="15"> Training Session (+$15)<br>
+<input type="checkbox" id="food" value="25"> Premium Food (+$25)<br>
+
+<button class="calc-button" onclick="calculateTotal()">CALCULATE TOTAL</button>
+<div class="total-output" id="totalDisplay">Total: $0</div>
+</div>
+
+</main>
+
+<footer>
+<p>&copy; 2025 Loving Homes. All rights reserved.</p>
+</footer>
+
+<script>
+// Animate cards on page load
+window.addEventListener("load", function(){
+  const cards = document.querySelectorAll('.card');
+  cards.forEach((card, i) => {
+    setTimeout(() => {
+      card.style.opacity = 1;
+      card.style.transform = "translateY(0)";
+    }, i*200);
+  });
+});
+
+// Calculate total
+function calculateTotal() {
+    let base = parseInt(document.getElementById("package").value);
+    let days = parseInt(document.getElementById("days").value);
+    let totalExtras = 0;
+
+    if(document.getElementById("grooming").checked) totalExtras += 20;
+    if(document.getElementById("training").checked) totalExtras += 15;
+    if(document.getElementById("food").checked) totalExtras += 25;
+
+    let total = (base * days) + totalExtras;
+
+    document.getElementById("totalDisplay").innerHTML = 
+      `Base (${days} days): $${base*days} <br>
+       Extras: $${totalExtras} <br>
+       <strong>Total: $${total}</strong>`;
+}
+</script>
+
+</body>
+</html>

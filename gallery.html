@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery - Loving Homes</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: #1a1a1a;
+    color: #f5d76e;
+    text-align: center;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    background: #111;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f5d76e;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+.nav-links li a {
+    text-decoration: none;
+    color: #f5d76e;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.nav-links li a:hover {
+    color: #fff;
+    text-shadow: 0 0 5px #f5d76e;
+}
+
+/* MAIN GALLERY */
+main {
+    margin-top: 120px;
+    padding: 0 20px;
+}
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+.gallery-container img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: 0.3s;
+    box-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+.gallery-container img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px #f5d76e;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(max-width:600px){
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+footer {
+    margin-top: 50px;
+    background: #111;
+    padding: 20px;
+    color: #f5d76e;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<nav>
+<div class="logo">Loving Homes</div>
+<ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about us.html">About Us</a></li>
+      <li><a href="facilities.html">Facilities</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="FAQ.html">FAQ</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<h1>🐶 Happy Paws Gallery 🐾</h1>
+<p>Some of our lovely friends enjoying their stay with us ✨</p>
+
+<div class="gallery-container">
+    <img src="https://thehappypuppysite.com/wp-content/uploads/2015/12/2-dogs-playing.png" alt="Playing Dogs">
+    <img src="https://www.petsittersireland.com/wp-content/uploads/2020/10/Groom-Your-Dog-scaled.jpg" alt="Grooming">
+    <img src="https://doggiegroomingstyles.com/wp-content/themes/ts-child/images/thumnail/carte-services.jpg" alt="Services">
+    <img src="https://vetmed.tamu.edu/news/wp-content/uploads/sites/9/2022/05/Swimming-pet-talk-1024x768.jpeg" alt="Swimming Pet">
+    <img src="https://imgix.bustle.com/uploads/shutterstock/2019/7/26/17da1e25-1b80-4ce3-853e-2cbc058958d7-shutterstock-1068108929.jpg?w=1200&h=630&fit=crop&crop=faces&fm=jpg" alt="Happy Dog">
+    <img src="https://www.treehugger.com/thmb/Wif4ZNBd2IINZrqBtG8hcnTtWzI=/5760x3840/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__mnn__images__2019__10__two_puppies_sleeping-71dfd308569846c8a428aa24899185ff.jpg" alt="Sleeping Puppies">
+</div>
+
+</main>
+
+<footer>
+<p>&copy; 2025 Loving Homes. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ - Loving Homes</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background-color: #1a1a1a;
+    color: #f5d76e;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: #111;
+    padding: 15px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+header .logo {
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #f5d76e;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 0;
+    margin-top: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f5d76e;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+/* Page Title */
+main h1 {
+    font-size: 2.8rem;
+    margin: 50px 0 10px;
+    border-bottom: 3px solid #f5d76e;
+    display: inline-block;
+    padding-bottom: 5px;
+    text-shadow: 0px 0px 10px rgba(245,215,110,0.5);
+}
+
+/* FAQ Styling */
+.faq-section {
+    background-color: rgba(26,26,26,0.95);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.faq-section:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 22px rgba(255,215,110,0.3);
+}
+
+.faq-question {
+    font-size: 1.4rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question::after {
+    content: "➕";
+    font-size: 1.3rem;
+    transition: transform 0.4s;
+}
+
+.faq-section.active .faq-question::after {
+    content: "➖";
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    font-size: 1.1rem;
+    margin-top: 12px;
+    display: none;
+    animation: fadeIn 0.4s ease-in-out forwards;
+    text-align: center;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    color: #f5d76e;
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.4);
+    margin-top: 50px;
+}
+
+@media (max-width: 700px) {
+    nav ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">Loving Homes</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+<h1>Frequently Asked Questions</h1>
+
+<div class="faq-section">
+    <div class="faq-question">What are your opening hours?</div>
+    <div class="faq-answer">We are open from 8:00 AM - 8:00 PM daily. Emergency services are available 24/7.</div>
+</div>
+
+<div class="faq-section">
+    <div class="faq-question">Do you offer grooming services?</div>
+    <div class="faq-answer">Yes, we offer full grooming including baths, trimming, brushing & spa care.</div>
+</div>
+
+<div class="faq-section">
+    <div class="faq-question">How can I book a package?</div>
+    <div class="faq-answer">You can book from the Packages page or contact us directly through the booking form.</div>
+</div>
+
+<div class="faq-section">
+    <div class="faq-question">Are vaccinations required for boarding?</div>
+    <div class="faq-answer">Yes, up-to-date vaccinations are mandatory for safety and health.</div>
+</div>
+
+<div class="faq-section">
+    <div class="faq-question">Can I visit before booking?</div>
+    <div class="faq-answer">Yes! You are welcome to tour the facility and meet our friendly staff.</div>
+</div>
+
+</main>
+
+<footer>
+<p>&copy; 2025 Loving Homes. All rights reserved.</p>
+</footer>
+
+<script>
+const faqs = document.querySelectorAll('.faq-section');
+faqs.forEach(faq => {
+    faq.addEventListener('click', () => {
+        faq.classList.toggle('active');
+        const answer = faq.querySelector('.faq-answer');
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    });
+});
+</script>
+
+</body>
+</html>
